@@ -34,7 +34,7 @@ namespace cpr {
  * Sources: https://curl.se/libcurl/c/CURLOPT_SSL_CTX_FUNCTION.html
  *          https://curl.se/libcurl/c/CURLOPT_SSL_CTX_DATA.html
  */
-CURLcode sslctx_function_load_ca_cert_from_buffer(CURL* /*curl*/, void* sslctx, void* raw_cert_buf) {
+CURLcode tryLoadCaCertFromBuffer(CURL* /*curl*/, void* sslctx, void* raw_cert_buf) {
     // Check arguments
     if (raw_cert_buf == nullptr || sslctx == nullptr) {
         std::cerr << "Invalid callback arguments!\n";
